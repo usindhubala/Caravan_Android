@@ -55,8 +55,8 @@ public class MapActivity extends Activity {
 	private void map_navigation()
 	{
 		 locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		 /*criteria = new Criteria();
-		 provider = locationManager.getBestProvider(criteria, false);*/
+		 criteria = new Criteria();
+		 provider = locationManager.getBestProvider(criteria, false);
 		
 		Boolean isGPSEnabled = locationManager
                 .isProviderEnabled(LocationManager.GPS_PROVIDER);
@@ -141,7 +141,7 @@ public class MapActivity extends Activity {
 	    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 0, locationListener);
 	  }
 
-	  /* Remove the locationlistener updates when Activity is paused */
+	  // Remove the locationlistener updates when Activity is paused 
 	  @Override
 	  protected void onPause() {
 	    super.onPause();
